@@ -69,7 +69,6 @@ jobs:
             "exec", "tools-pack", "win", "build",
             "--dir", "${{ runner.temp }}\tools-pack",
             "--namespace", "fork-win",
-            "--portable",
             "--app-version", "${{ inputs.app_version }}",
             "--to", "${{ inputs.target }}",
             "--json"
@@ -78,10 +77,21 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "tools-pack win build failed with exit code $LASTEXITCODE" }
           $buildOutput | Set-Content -Path "$outDir\build.json" -Encoding utf8
           $build = $buildOutput | ConvertFrom-Json
-          if ([string]::IsNullOrWhiteSpace($build.payloadPath)) { throw "build produced no payloadPath" }
-          Copy-Item -Path $build.payloadPath -Destination $outDir -Force
-          "payload=$($build.payloadPath)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
-          Write-Host "Built installer: $($build.payloadPath)"
+          # Prefer the user-facing NSIS installer (.exe); fall back to the
+          # portable zip when target=portable.
+          $artifact = if (-not [string]::IsNullOrWhiteSpace($build.installerPath)) {
+            $build.installerPath
+          } elseif (-not [string]::IsNullOrWhiteSpace($build.portableZipPath)) {
+            $build.portableZipPath
+          } else {
+            throw "build produced neither installerPath nor portableZipPath"
+          }
+          Copy-Item -Path $artifact -Destination $outDir -Force
+          if (-not [string]::IsNullOrWhiteSpace($build.latestYmlPath) -and (Test-Path $build.latestYmlPath)) {
+            Copy-Item -Path $build.latestYmlPath -Destination $outDir -Force
+          }
+          "artifact=$artifact" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          Write-Host "Built installer: $artifact"
 
       - name: Upload installer artifact
         uses: actions/upload-artifact@v4
