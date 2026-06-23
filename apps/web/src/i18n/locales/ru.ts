@@ -367,6 +367,7 @@ export const ru: Dict = {
   'settings.cliEnvTitle': 'Дополнительно: прокси и пользовательские пути',
   'settings.cliEnvHint': 'Используйте эти поля, чтобы переопределить окружение выбранной CLI: API key, proxy base URL, пользовательские home-каталоги или нестандартные пути к бинарникам. Без base URL CLI использует свой endpoint по умолчанию. Секреты остаются в локальной конфигурации приложения и передаются только выбранной CLI.',
   'settings.cliEnvClaudeConfigDir': 'Каталог конфигурации Claude Code',
+  'settings.cliEnvClaudeBin': 'Путь к исполняемому файлу Claude Code',
   'settings.cliEnvClaudeBaseUrl': 'Base URL прокси Claude',
   'settings.cliEnvClaudeApiKey': 'API key Claude CLI',
   'settings.cliEnvCodexHome': 'Домашний каталог Codex',

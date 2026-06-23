@@ -367,6 +367,7 @@ export const tr: Dict = {
   'settings.cliEnvTitle': 'Gelişmiş: proxy ve özel yollar',
   'settings.cliEnvHint': 'Seçili CLI ortamını geçersiz kılmak için bunları kullanın: API key, proxy base URL, özel home veya standart dışı binary yolları. Base URL yoksa CLI kendi varsayılan endpointini kullanır. Gizli bilgiler yerel uygulama yapılandırmasında kalır ve yalnızca seçili CLI bunları görür.',
   'settings.cliEnvClaudeConfigDir': 'Claude Code yapılandırma dizini',
+  'settings.cliEnvClaudeBin': 'Claude Code çalıştırılabilir dosya yolu',
   'settings.cliEnvClaudeBaseUrl': 'Claude proxy Base URL',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API key',
   'settings.cliEnvCodexHome': 'Codex home',

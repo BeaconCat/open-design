@@ -378,6 +378,7 @@ export interface Dict {
   'settings.cliEnvTitle': string;
   'settings.cliEnvHint': string;
   'settings.cliEnvClaudeConfigDir': string;
+  'settings.cliEnvClaudeBin': string;
   'settings.cliEnvClaudeBaseUrl': string;
   'settings.cliEnvClaudeApiKey': string;
   'settings.cliEnvCodexHome': string;

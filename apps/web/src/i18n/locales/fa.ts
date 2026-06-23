@@ -367,6 +367,7 @@ export const fa: Dict = {
   'settings.cliEnvTitle': 'پیشرفته: پراکسی و مسیرهای سفارشی',
   'settings.cliEnvHint': 'از این گزینه‌ها برای بازنویسی محیط CLI انتخاب‌شده استفاده کنید: API key، base URL پراکسی، home سفارشی یا مسیر اجرایی غیر استاندارد. اگر base URL تنظیم نشود، CLI از endpoint پیش‌فرض خودش استفاده می‌کند. اطلاعات محرمانه در تنظیمات محلی برنامه می‌مانند و فقط CLI انتخاب‌شده آن‌ها را می‌بیند.',
   'settings.cliEnvClaudeConfigDir': 'پوشه پیکربندی Claude Code',
+  'settings.cliEnvClaudeBin': 'مسیر فایل اجرایی Claude Code',
   'settings.cliEnvClaudeBaseUrl': 'Base URL پروکسی Claude',
   'settings.cliEnvClaudeApiKey': 'API key برای Claude CLI',
   'settings.cliEnvCodexHome': 'خانه Codex',

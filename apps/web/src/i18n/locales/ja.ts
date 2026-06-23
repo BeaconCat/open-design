@@ -367,6 +367,7 @@ export const ja: Dict = {
   'settings.cliEnvTitle': '詳細設定: プロキシとカスタムパス',
   'settings.cliEnvHint': '選択した CLI の環境を上書きするために使用します: API key、プロキシ base URL、カスタム home、標準以外の実行ファイルパス。base URL を設定しない場合、CLI は既定の endpoint を使用します。シークレットはローカルのアプリ設定内に保持され、選択した CLI のみが参照します。',
   'settings.cliEnvClaudeConfigDir': 'Claude Code 設定ディレクトリ',
+  'settings.cliEnvClaudeBin': 'Claude Code 実行ファイルのパス',
   'settings.cliEnvClaudeBaseUrl': 'Claude プロキシの Base URL',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API key',
   'settings.cliEnvCodexHome': 'Codex ホーム',

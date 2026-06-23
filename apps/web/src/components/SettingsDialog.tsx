@@ -630,6 +630,12 @@ const AGENT_CLI_ENV_FIELDS = [
   },
   {
     agentId: 'claude',
+    envKey: 'CLAUDE_BIN',
+    labelKey: 'settings.cliEnvClaudeBin',
+    placeholder: '/absolute/path/to/claude',
+  },
+  {
+    agentId: 'claude',
     envKey: 'ANTHROPIC_BASE_URL',
     labelKey: 'settings.cliEnvClaudeBaseUrl',
     placeholder: 'https://your-proxy.example.com',

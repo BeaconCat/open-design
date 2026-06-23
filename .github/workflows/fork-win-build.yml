@@ -1,0 +1,91 @@
+# Personal fork Windows build.
+#
+# Not part of the upstream two-layer CI/release topology — this is a
+# standalone, manually-triggered builder that produces an UNSIGNED Windows
+# NSIS installer and uploads it as a workflow artifact. It exists so a fork
+# can compile a runnable Windows build (including local feature branches such
+# as the per-CLI executable-path config) without the upstream release
+# infrastructure (signing certs, R2 upload, updater feeds).
+name: Fork Win Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Windows package target
+        type: choice
+        default: nsis
+        options:
+          - nsis
+          - portable
+      app_version:
+        description: App version stamped into the build
+        type: string
+        default: 0.11.1-fork
+
+permissions:
+  contents: read
+
+jobs:
+  build-win:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: 10.33.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Setup NSIS
+        shell: pwsh
+        run: |
+          if ((Get-Command makensis.exe -ErrorAction SilentlyContinue) -or (Test-Path "C:\Program Files (x86)\NSIS\makensis.exe")) {
+            exit 0
+          }
+          choco install nsis -y --no-progress
+
+      - name: Build Windows installer
+        id: build
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $outDir = "${{ runner.temp }}\fork-build"
+          New-Item -ItemType Directory -Force -Path $outDir | Out-Null
+          pnpm.cmd exec tools-pack win cleanup --dir "${{ runner.temp }}\tools-pack" --namespace fork-win --json
+          $buildArgs = @(
+            "exec", "tools-pack", "win", "build",
+            "--dir", "${{ runner.temp }}\tools-pack",
+            "--namespace", "fork-win",
+            "--portable",
+            "--app-version", "${{ inputs.app_version }}",
+            "--to", "${{ inputs.target }}",
+            "--json"
+          )
+          $buildOutput = pnpm.cmd @buildArgs
+          if ($LASTEXITCODE -ne 0) { throw "tools-pack win build failed with exit code $LASTEXITCODE" }
+          $buildOutput | Set-Content -Path "$outDir\build.json" -Encoding utf8
+          $build = $buildOutput | ConvertFrom-Json
+          if ([string]::IsNullOrWhiteSpace($build.payloadPath)) { throw "build produced no payloadPath" }
+          Copy-Item -Path $build.payloadPath -Destination $outDir -Force
+          "payload=$($build.payloadPath)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          Write-Host "Built installer: $($build.payloadPath)"
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: open-design-win-${{ inputs.target }}
+          path: ${{ runner.temp }}\fork-build\*
+          if-no-files-found: error

@@ -367,6 +367,7 @@ export const de: Dict = {
   'settings.cliEnvTitle': 'Erweitert: Proxy und benutzerdefinierte Pfade',
   'settings.cliEnvHint': 'Nutze diese Felder, um die Umgebung der ausgewählten CLI zu überschreiben: API-Keys, Proxy-Base-URLs, eigene Homes oder nicht standardmäßige Binary-Pfade. Ohne Base URL nutzt die CLI ihren Standard-Endpunkt. Secrets bleiben in der lokalen App-Konfiguration und werden nur an die ausgewählte CLI weitergegeben.',
   'settings.cliEnvClaudeConfigDir': 'Claude Code-Konfigurationsverzeichnis',
+  'settings.cliEnvClaudeBin': 'Claude Code-Programmpfad',
   'settings.cliEnvClaudeBaseUrl': 'Claude-Proxy-Base-URL',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API-Key',
   'settings.cliEnvCodexHome': 'Codex-Home',

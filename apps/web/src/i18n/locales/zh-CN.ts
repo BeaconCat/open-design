@@ -367,6 +367,7 @@ export const zhCN: Dict = {
   'settings.cliEnvTitle': '高级：代理与自定义路径',
   'settings.cliEnvHint': '用于覆盖所选 CLI 的底层环境变量：API key、代理 base URL、自定义 home 或非标准可执行文件路径。不填 base URL 时，CLI 会使用自己的默认接口地址。密钥只保存在本地应用配置中，并且只传给所选 CLI。',
   'settings.cliEnvClaudeConfigDir': 'Claude Code 配置目录',
+  'settings.cliEnvClaudeBin': 'Claude Code 可执行文件路径',
   'settings.cliEnvClaudeBaseUrl': 'Claude proxy base URL',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API key',
   'settings.cliEnvCodexHome': 'Codex home',

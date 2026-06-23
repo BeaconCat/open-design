@@ -367,6 +367,7 @@ export const ko: Dict = {
   'settings.cliEnvTitle': '고급: 프록시 및 사용자 지정 경로',
   'settings.cliEnvHint': '선택한 CLI 환경을 재정의할 때 사용하세요: API key, 프록시 base URL, 사용자 지정 home, 비표준 실행 파일 경로. base URL이 없으면 CLI는 자체 기본 endpoint를 사용합니다. 비밀 정보는 로컬 앱 설정에 저장되며 선택한 CLI만 볼 수 있습니다.',
   'settings.cliEnvClaudeConfigDir': 'Claude Code 설정 디렉터리',
+  'settings.cliEnvClaudeBin': 'Claude Code 실행 파일 경로',
   'settings.cliEnvClaudeBaseUrl': 'Claude 프록시 Base URL',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API key',
   'settings.cliEnvCodexHome': 'Codex 홈',

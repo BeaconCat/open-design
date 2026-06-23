@@ -367,6 +367,7 @@ export const hu: Dict = {
   'settings.cliEnvTitle': 'Speciális: proxy és egyéni útvonalak',
   'settings.cliEnvHint': 'Ezekkel írhatod felül a kiválasztott CLI környezetét: API-kulcsok, proxy base URL-ek, egyéni home-ok vagy nem szabványos bináris útvonalak. Base URL nélkül a CLI a saját alapértelmezett endpointját használja. A titkok a helyi alkalmazás-konfigurációban maradnak, és csak a kiválasztott CLI kapja meg őket.',
   'settings.cliEnvClaudeConfigDir': 'Claude Code konfigurációs könyvtár',
+  'settings.cliEnvClaudeBin': 'Claude Code futtatható fájl elérési útja',
   'settings.cliEnvClaudeBaseUrl': 'Claude proxy Base URL',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API-kulcs',
   'settings.cliEnvCodexHome': 'Codex könyvtár',

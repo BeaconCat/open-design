@@ -367,6 +367,7 @@ export const pl: Dict = {
   'settings.cliEnvTitle': 'Zaawansowane: proxy i własne ścieżki',
   'settings.cliEnvHint': 'Użyj tych pól, aby nadpisać środowisko wybranej CLI: API keys, proxy base URL, własne home lub niestandardowe ścieżki binarne. Bez base URL CLI używa własnego domyślnego endpointu. Sekrety pozostają w lokalnej konfiguracji aplikacji i widzi je tylko wybrana CLI.',
   'settings.cliEnvClaudeConfigDir': 'Katalog konfiguracji Claude Code',
+  'settings.cliEnvClaudeBin': 'Ścieżka pliku wykonywalnego Claude Code',
   'settings.cliEnvClaudeBaseUrl': 'Base URL serwera proxy Claude',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API key',
   'settings.cliEnvCodexHome': 'Katalog domowy Codex',

@@ -367,6 +367,7 @@ export const ar: Dict = {
   'settings.cliEnvTitle': 'متقدّم: الوكيل والمسارات المخصّصة',
   'settings.cliEnvHint': 'استخدم هذه الخيارات لتجاوز بيئة CLI المحدّد: مفاتيح API، وعناوين base URL للوكيل، ومجلدات home المخصّصة، أو مسارات تنفيذ غير قياسية. عند عدم ضبط base URL، يستخدم CLI نقطة النهاية الافتراضية الخاصة به. تبقى الأسرار في إعدادات التطبيق المحلية ولا يراها سوى CLI المحدّد.',
   'settings.cliEnvClaudeConfigDir': 'دليل إعدادات Claude Code',
+  'settings.cliEnvClaudeBin': 'مسار ملف Claude Code التنفيذي',
   'settings.cliEnvClaudeBaseUrl': 'Base URL لوكيل Claude',
   'settings.cliEnvClaudeApiKey': 'مفتاح API لـ Claude CLI',
   'settings.cliEnvCodexHome': 'مجلد Codex الرئيسي',

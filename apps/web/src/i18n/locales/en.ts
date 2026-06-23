@@ -367,6 +367,7 @@ export const en: Dict = {
   'settings.cliEnvTitle': 'Advanced: proxy & custom paths',
   'settings.cliEnvHint': 'Use these to override the selected CLI environment: API keys, proxy base URLs, custom homes, or non-standard binary paths. Without a base URL, the CLI uses its default endpoint. Secrets stay in local app config and only the selected CLI sees them.',
   'settings.cliEnvClaudeConfigDir': 'Claude Code config directory',
+  'settings.cliEnvClaudeBin': 'Claude Code executable path',
   'settings.cliEnvClaudeBaseUrl': 'Claude proxy base URL',
   'settings.cliEnvClaudeApiKey': 'Claude CLI API key',
   'settings.cliEnvCodexHome': 'Codex home',

@@ -367,6 +367,7 @@ export const id: Dict = {
   'settings.cliEnvTitle': 'Lanjutan: proxy & path kustom',
   'settings.cliEnvHint': 'Gunakan ini untuk menimpa environment CLI yang dipilih: API key, proxy base URL, home kustom, atau path binary non-standar. Tanpa base URL, CLI memakai endpoint defaultnya. Secret tetap berada di konfigurasi app lokal dan hanya dilihat oleh CLI yang dipilih.',
   'settings.cliEnvClaudeConfigDir': 'Direktori konfigurasi Claude Code',
+  'settings.cliEnvClaudeBin': 'Path executable Claude Code',
   'settings.cliEnvClaudeBaseUrl': 'Base URL proxy Claude',
   'settings.cliEnvClaudeApiKey': 'API key Claude CLI',
   'settings.cliEnvCodexHome': 'Home Codex',
